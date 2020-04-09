@@ -1,0 +1,26 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset= 'utf-8'>
+    <link rel='stylesheet' href='style/hangman.css'>
+  </head>
+  <body>
+    <h1>Hangman</h1>
+    <h4>It's in your hands...</h4>
+    <img src= <%= "img/attempt#{game.mistakes}.png" %> >
+    <h1><%= game.secret_word.split("").join(" ") %></h1>
+    <p><%= "Guessed Letters: #{game.guessed_letters.join(" ")}"%></p>
+    <%= "<p>#{message}</p>" if !message.to_s.empty? %>
+    <form action= '/hangman' method= 'post'>
+      <% unless game.game_over? %>
+      <input type= 'text' maxlength= '1' name= 'guess' autofocus = 'autofocus'>
+      <input type= 'submit' value= 'Guess'>
+      <% else %>
+      <input type= 'hidden' name= 'restart' value= 'true'>
+      <input type= 'submit' value= 'Try to save someone else' >
+      <% end %>
+    </form>
+    <p> </p>
+    <button type= 'button'><a href='/'>Homepage</a></button>
+  </body>
+</html>

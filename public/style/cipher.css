@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  background-color: darkkhaki;
+  color: darkslategrey;
+}
+
+#header, #out {
+  border: double;
+  border-left-style:outset;
+  border-right-style: outset;
+  border-left-width: thick;
+  border-right-width: thick;
+  background-color: beige;
+}
+
+#in {
+  border-left-style: dashed;
+  border-right-style: dashed;
+}
+
+#header, #in, #out {
+  border-left-color: firebrick;
+  border-right-color: firebrick;
+}
+
+input {
+  color: darkslategray;
+  background-color: beige;
+}
