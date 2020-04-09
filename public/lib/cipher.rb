@@ -1,6 +1,6 @@
 module Cipher
 
-  def caesar_cipher msg, key
+  def self.caesar_cipher msg, key
     chars = msg.split("")
     key = key % 26
     chars.size.times do |i|
